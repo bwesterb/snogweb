@@ -46,5 +46,11 @@ for name, node in web.nodes.iteritems():
 		emited.add(link)
 		dot.add_edge(pydot.Edge(link.x.name, link.y.name))
 
-print dot.to_string()
+out = dot.to_string()
+if len(sys.argv) > 1:
+        with open(sys.argv[1], 'w') as f:
+                f.write(out)
+else:
+        print out
+
 

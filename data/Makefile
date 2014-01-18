@@ -1,5 +1,5 @@
 %.raw.dot: %.snog
-	python ../snog2dot.py < $< > $@
+	python ../snog2dot.py $@ < $<
 
 %.pos.dot: %.raw.dot
 	neato -Elen=10 < $< > tmp
